@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <main>
+            <form id="registration-form" onsubmit="return validateForm()" action="#">
+                <div>
+                    
+                    <h1>Register</h1>
+                </div>
+                <div class="account">
+                    <p>Create an account.It's free and takes a minute</p>
+                </div>
+                <div class="validate">
+                    <div class="name">
+                        <input type="text" placeholder="First Name" id="firstName" required >
+                       
+                        <input type="text" placeholder="Last Name" id="secondName">
+                    </div>
+                    <p id="fnameError">
+
+                    </p>
+                    <div class="mail">
+                        <input type="email" placeholder="Email" id="userMail"  required>
+                            <p id="MailError"></p>
+                        <input type="password" placeholder="Password" id="userPassword" required minlength="8" >
+                        <p id="passwordError"></p>
+                        <input type="password" placeholder="Confirm Password" id="confirmPassword" required minlength="8" >
+                        <p id="confirmPasswordError"></p>
+                    </div>
+                    <div class="terms">
+                        <input type="checkbox" required>
+                        <p>I accept the <span>Terms of Use</span>& <span>Privacy Policy</span></p>
+                        <p id="termsError"></p>
+                    </div>
+                </div>
+                <div><button id="register"  type="submit">Register Now</button></div>
+            </form>
+        </main>
+    </div>
+    <footer>
+        Already have an account?<span class="signIn">Sign In</span></div>
+    </footer>
+</body>
+<script src="script.js"></script>
+
+</html>
