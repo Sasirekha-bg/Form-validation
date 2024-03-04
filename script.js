@@ -8,7 +8,7 @@ function validateForm() {
     const fnameError = document.getElementById('fnameError');
     if (firstName.value.trim() === '') {
         fnameError.textContent = 'First name is required.';
-        isValid = false;
+        return false;
     } else {
         fnameError.textContent = '';
     }
@@ -19,7 +19,7 @@ function validateForm() {
     const emailRegex = /^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/;
     if (!emailRegex.test(email.value)) {
         MailError.textContent = 'Please enter a valid email address.';
-        isValid = false;
+        return false;
     } else {
         MailError.textContent = '';
     }
@@ -30,10 +30,10 @@ function validateForm() {
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[~!@#$%^&*]).{8,24}$/;
     if (password.value.length < 8) {
         passwordError.textContent = 'Password must be at least 8 characters long.';
-        isValid = false;
+        return false;
     } else if(!passwordRegex.test(password.value)){
         passwordError.textContent = 'Password consists atleast 1 Uppercase,1 Lowercase,1 Digit,1 Special character,minumum 8 characters';
-        isValid = false;
+        return false;
     }else{
         passwordError.textContent = '';
     }
@@ -43,7 +43,7 @@ function validateForm() {
     const confirmPasswordError = document.getElementById('confirmPasswordError');
     if (confirmPassword.value !== password.value) {
         confirmPasswordError.textContent = 'Passwords do not match.';
-        isValid = false;
+        return false;
     } else {
         confirmPasswordError.textContent = '';
     }
@@ -53,7 +53,7 @@ function validateForm() {
     const termsError = document.getElementById('termsError');
     if (!terms.checked) {
         termsError.textContent = 'Please accept the Terms of Use & Privacy Policy.';
-        isValid = false;
+        return false;
     } else {
         termsError.textContent = '';
     }
